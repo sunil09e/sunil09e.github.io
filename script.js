@@ -1,93 +1,30 @@
-// ===============================
-// Typing Effect
-// ===============================
+// ==========================================
+// SMOOTH SCROLL
+// ==========================================
 
-const texts = [
-    "DevOps Engineer",
-    "AWS Cloud Engineer",
-    "DevSecOps Enthusiast",
-    "CI/CD Automation",
-    "Docker & Kubernetes"
-];
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
-let count = 0;
-let index = 0;
-let currentText = "";
-let letter = "";
+    anchor.addEventListener("click", function (e) {
 
-(function type() {
+        e.preventDefault();
 
-    if (count === texts.length) {
-        count = 0;
-    }
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
 
-    currentText = texts[count];
-    letter = currentText.slice(0, ++index);
+            behavior: "smooth"
 
-    document.querySelector(".typing").textContent = letter;
+        });
 
-    if (letter.length === currentText.length) {
-
-        setTimeout(() => {
-
-            erase();
-
-        }, 1500);
-
-    } else {
-
-        setTimeout(type, 120);
-
-    }
-
-})();
-
-function erase() {
-
-    letter = currentText.slice(0, --index);
-
-    document.querySelector(".typing").textContent = letter;
-
-    if (letter.length === 0) {
-
-        count++;
-
-        setTimeout(type, 300);
-
-    } else {
-
-        setTimeout(erase, 60);
-
-    }
-
-}
-
-// ===============================
-// Sticky Navbar Shadow
-// ===============================
-
-window.addEventListener("scroll", function () {
-
-    const header = document.querySelector("header");
-
-    if (window.scrollY > 20) {
-
-        header.style.boxShadow = "0px 5px 20px rgba(0,0,0,.4)";
-
-    } else {
-
-        header.style.boxShadow = "none";
-
-    }
+    });
 
 });
 
-// ===============================
-// Active Navigation
-// ===============================
+// ==========================================
+// ACTIVE NAVIGATION
+// ==========================================
 
 const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll("nav ul li a");
+
+const navLinks = document.querySelectorAll(".navbar ul li a");
 
 window.addEventListener("scroll", () => {
 
@@ -96,6 +33,8 @@ window.addEventListener("scroll", () => {
     sections.forEach(section => {
 
         const sectionTop = section.offsetTop - 150;
+
+        const sectionHeight = section.clientHeight;
 
         if (pageYOffset >= sectionTop) {
 
@@ -109,7 +48,7 @@ window.addEventListener("scroll", () => {
 
         link.classList.remove("active");
 
-        if (link.getAttribute("href") == "#" + current) {
+        if (link.getAttribute("href") === "#" + current) {
 
             link.classList.add("active");
 
@@ -119,79 +58,228 @@ window.addEventListener("scroll", () => {
 
 });
 
-// ===============================
-// Reveal Animation
-// ===============================
+// ==========================================
+// SCROLL REVEAL
+// ==========================================
 
-const reveals = document.querySelectorAll(
-    ".card,.project-card,.timeline-box,.education-box,.about-box"
+const hiddenElements = document.querySelectorAll(
+
+    ".about-card, .info-card, .skill-card, .experience-box, .project-card, .education-card, .language-card, .certificate-card"
+
 );
 
-window.addEventListener("scroll", reveal);
+const observer = new IntersectionObserver((entries) => {
 
-function reveal() {
+    entries.forEach(entry => {
 
-    const windowHeight = window.innerHeight;
+        if (entry.isIntersecting) {
 
-    reveals.forEach(item => {
-
-        const top = item.getBoundingClientRect().top;
-
-        if (top < windowHeight - 120) {
-
-            item.style.opacity = "1";
-            item.style.transform = "translateY(0px)";
+            entry.target.classList.add("show");
 
         }
 
     });
 
-}
+}, {
 
-// Initial Styles
-
-reveals.forEach(item => {
-
-    item.style.opacity = "0";
-    item.style.transform = "translateY(50px)";
-    item.style.transition = "all .8s ease";
+    threshold: 0.2
 
 });
 
-reveal();
+hiddenElements.forEach(el => {
 
-// ===============================
-// Smooth Scroll
-// ===============================
+    el.classList.add("hidden");
 
-document.querySelectorAll('nav a').forEach(anchor => {
+    observer.observe(el);
 
-    anchor.addEventListener('click', function (e) {
+});
 
-        e.preventDefault();
+// ==========================================
+// BACK TO TOP BUTTON
+// ==========================================
 
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
+const topButton = document.querySelector(".top-btn");
 
-            behavior: 'smooth'
+window.addEventListener("scroll", () => {
 
-        });
+    if (window.scrollY > 400) {
+
+        topButton.style.display = "flex";
+
+    } else {
+
+        topButton.style.display = "none";
+
+    }
+
+});
+
+// ==========================================
+// TYPING EFFECT
+// ==========================================
+
+const text = "DevOps Engineer";
+
+const typingElement = document.querySelector(".hero-left h2");
+
+let index = 0;
+
+function typeWriter() {
+
+    if (!typingElement) return;
+
+    typingElement.innerHTML = "";
+
+    index = 0;
+
+    function typing() {
+
+        if (index < text.length) {
+
+            typingElement.innerHTML += text.charAt(index);
+
+            index++;
+
+            setTimeout(typing, 120);
+
+        }
+
+    }
+
+    typing();
+
+}
+
+window.onload = typeWriter;
+
+// ==========================================
+// FLOATING ICONS
+// ==========================================
+
+const icons = document.querySelectorAll(".icons i");
+
+icons.forEach((icon, i) => {
+
+    icon.style.animation = `floatIcon ${3 + i * 0.3}s ease-in-out infinite`;
+
+});
+
+// ==========================================
+// PROJECT CARD HOVER EFFECT
+// ==========================================
+
+document.querySelectorAll(".project-card").forEach(card => {
+
+    card.addEventListener("mouseenter", () => {
+
+        card.style.transform = "translateY(-12px) scale(1.02)";
+
+    });
+
+    card.addEventListener("mouseleave", () => {
+
+        card.style.transform = "";
 
     });
 
 });
 
-// ===============================
-// Footer Year
-// ===============================
+// ==========================================
+// PARALLAX HERO EFFECT
+// ==========================================
 
-const footer = document.querySelector("footer p");
+window.addEventListener("scroll", () => {
 
-const year = new Date().getFullYear();
+    const hero = document.querySelector(".hero");
 
-footer.innerHTML = `© ${year} Sunil Kumar | DevOps Portfolio`;
+    if (hero) {
 
-// ===============================
-// Welcome Message
-// ===============================
+        hero.style.backgroundPositionY = `${window.scrollY * 0.3}px`;
 
-console.log("Welcome to Sunil Kumar's DevOps Portfolio");
+    }
+
+});
+
+// ==========================================
+// NAVBAR SHADOW ON SCROLL
+// ==========================================
+
+const navbar = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 40) {
+
+        navbar.style.boxShadow = "0 10px 30px rgba(0,0,0,.45)";
+
+    } else {
+
+        navbar.style.boxShadow = "none";
+
+    }
+
+});
+
+// ==========================================
+// PRELOADER (OPTIONAL)
+// ==========================================
+
+window.addEventListener("load", () => {
+
+    const loader = document.querySelector(".loader");
+
+    if (loader) {
+
+        loader.style.opacity = "0";
+
+        setTimeout(() => {
+
+            loader.style.display = "none";
+
+        }, 600);
+
+    }
+
+});
+
+// ==========================================
+// FLOATING ICON KEYFRAMES
+// ==========================================
+
+const style = document.createElement("style");
+
+style.innerHTML = `
+
+@keyframes floatIcon{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+.active{
+
+color:#7b6cff !important;
+
+font-weight:700;
+
+}
+
+`;
+
+document.head.appendChild(style);
