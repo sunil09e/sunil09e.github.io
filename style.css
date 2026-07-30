@@ -1005,14 +1005,9 @@ SKILLS
 ==================================================*/
 
 .projects-grid{
-
     display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(360px,1fr));
-
+    grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
     gap:40px;
-
 }
 
 /*==================================================
@@ -1020,60 +1015,46 @@ SKILLS
 ==================================================*/
 
 .project-card{
-
-    background:rgba(255,255,255,.05);
-
-    backdrop-filter:blur(22px);
-
-    border-radius:30px;
-
-    border:1px solid rgba(255,255,255,.08);
-
+    position:relative;
     overflow:hidden;
 
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(22px);
+
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:30px;
+
     transition:.5s;
-
-    position:relative;
-
 }
 
 .project-card::before{
-
     content:"";
-
     position:absolute;
-
     inset:0;
 
-    background:
-    linear-gradient(135deg,
-    rgba(0,212,255,.12),
-    rgba(124,92,255,.12));
+    background:linear-gradient(
+        135deg,
+        rgba(0,212,255,.12),
+        rgba(124,92,255,.12)
+    );
 
     opacity:0;
-
     transition:.4s;
 
+    pointer-events:none;
+    z-index:0;
 }
 
 .project-card:hover::before{
-
     opacity:1;
-
 }
 
 .project-card:hover{
-
-    transform:
-    translateY(-18px)
-    scale(1.02);
+    transform:translateY(-18px) scale(1.02);
 
     box-shadow:
-
-    0 20px 60px rgba(0,212,255,.25),
-
-    0 0 40px rgba(124,92,255,.35);
-
+        0 20px 60px rgba(0,212,255,.25),
+        0 0 40px rgba(124,92,255,.35);
 }
 
 /*==================================================
@@ -1081,35 +1062,23 @@ SKILLS
 ==================================================*/
 
 .project-image{
-
     height:180px;
 
     display:flex;
-
     justify-content:center;
-
     align-items:center;
 
     font-size:80px;
 
-    background:
-
-    linear-gradient(135deg,#0d1a35,#151d45);
-
+    background:linear-gradient(135deg,#0d1a35,#151d45);
     color:#00d4ff;
 
     transition:.5s;
-
 }
 
 .project-card:hover .project-image{
-
-    color:white;
-
-    background:
-
-    linear-gradient(135deg,#00d4ff,#7c5cff);
-
+    background:linear-gradient(135deg,#00d4ff,#7c5cff);
+    color:#fff;
 }
 
 /*==================================================
@@ -1117,29 +1086,22 @@ SKILLS
 ==================================================*/
 
 .project-content{
+    position:relative;
+    z-index:2;
 
     padding:35px;
-
 }
 
 .project-content h2{
-
     font-size:27px;
-
-    margin-bottom:18px;
-
     line-height:1.4;
-
+    margin-bottom:18px;
 }
 
 .project-content p{
-
     color:#d8d8ff;
-
     line-height:1.8;
-
     margin-bottom:25px;
-
 }
 
 /*==================================================
@@ -1147,45 +1109,30 @@ SKILLS
 ==================================================*/
 
 .tech-stack{
-
     display:flex;
-
     flex-wrap:wrap;
-
     gap:12px;
-
     margin-bottom:25px;
-
 }
 
 .tech-stack span{
-
     padding:8px 18px;
 
     border-radius:30px;
 
-    background:
-
-    rgba(0,212,255,.12);
-
+    background:rgba(0,212,255,.12);
     border:1px solid rgba(0,212,255,.25);
 
     color:#00d4ff;
-
     font-size:14px;
 
     transition:.35s;
-
 }
 
 .tech-stack span:hover{
-
     background:#00d4ff;
-
     color:#050816;
-
     transform:translateY(-4px);
-
 }
 
 /*==================================================
@@ -1193,55 +1140,39 @@ SKILLS
 ==================================================*/
 
 .features{
-
     list-style:none;
-
     margin-bottom:35px;
-
 }
 
 .features li{
-
-    margin-bottom:14px;
-
-    padding-left:28px;
-
     position:relative;
-
+    padding-left:28px;
+    margin-bottom:14px;
     color:#d8d8ff;
-
 }
 
 .features li::before{
-
     content:"★";
-
     position:absolute;
-
     left:0;
-
     color:#7c5cff;
-
 }
 
 /*==================================================
- BUTTON
+ BUTTONS
 ==================================================*/
 
 .project-buttons{
-
     display:flex;
-
     gap:20px;
 
+    position:relative;
+    z-index:3;
 }
 
 .code-btn{
-
     display:inline-flex;
-
     align-items:center;
-
     gap:10px;
 
     padding:14px 28px;
@@ -1249,99 +1180,77 @@ SKILLS
     border-radius:35px;
 
     text-decoration:none;
-
     font-weight:600;
 
-    background:
+    color:#fff;
 
-    linear-gradient(135deg,#00d4ff,#7c5cff);
-
-    color:white;
+    background:linear-gradient(135deg,#00d4ff,#7c5cff);
 
     transition:.4s;
 
+    position:relative;
+    z-index:4;
 }
 
 .code-btn:hover{
-
     transform:translateY(-6px);
 
     box-shadow:
-
-    0 0 25px #00d4ff,
-
-    0 0 60px #7c5cff;
-
+        0 0 25px #00d4ff,
+        0 0 60px #7c5cff;
 }
 
 /*==================================================
- PROJECT SHINE EFFECT
+ SHINE EFFECT
 ==================================================*/
 
 .project-card::after{
-
     content:"";
 
     position:absolute;
 
     top:-150%;
-
     left:-60%;
 
     width:60%;
-
     height:300%;
 
-    background:
-
-    rgba(255,255,255,.12);
+    background:rgba(255,255,255,.12);
 
     transform:rotate(25deg);
 
     transition:.8s;
 
+    pointer-events:none;
+    z-index:1;
 }
 
 .project-card:hover::after{
-
     left:140%;
-
 }
 
 /*==================================================
- FLOATING PROJECTS
+ FLOATING EFFECT
 ==================================================*/
 
 .project-card:nth-child(odd){
-
     animation:floatProject1 6s ease-in-out infinite;
-
 }
 
 .project-card:nth-child(even){
-
     animation:floatProject2 7s ease-in-out infinite;
-
 }
 
 @keyframes floatProject1{
-
-50%{
-
-transform:translateY(-8px);
-
-}
-
+    50%{
+        transform:translateY(-8px);
+    }
 }
 
 @keyframes floatProject2{
-
-50%{
-
-transform:translateY(8px);
-
-}
-
+    50%{
+        transform:translateY(8px);
+    }
 }
 /*==================================================
 EDUCATION
