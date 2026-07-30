@@ -887,54 +887,42 @@ SKILLS
     color:#fff;
 }
 
-/* Description Hidden */
+
+/* Description */
 
 .skill-card p{
-
     color:#d8d8d8;
     font-size:15px;
     line-height:1.5;
 
+    height:45px;
     opacity:0;
-    max-height:0;
-    overflow:hidden;
-
+    transform:translateY(15px);
     transition:.4s;
 }
 
-/* Learn Button Hidden */
+/* Learn Button */
 
 .learn-btn{
-
     display:inline-block;
-
     margin-top:15px;
-
     padding:10px 20px;
-
     border-radius:30px;
-
     background:#00d4ff;
-
     color:#fff;
-
     text-decoration:none;
 
     opacity:0;
-
-    max-height:0;
-
-    overflow:hidden;
-
+    transform:translateY(15px);
     transition:.4s;
 }
 
 /* Show on Hover */
 
-.skill-card p,
-.learn-btn{
+.skill-card:hover p,
+.skill-card:hover .learn-btn{
     opacity:1;
-    max-height:none;
+    transform:translateY(0);
 }
 
 /* Button Hover */
