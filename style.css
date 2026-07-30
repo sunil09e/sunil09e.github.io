@@ -857,15 +857,82 @@ SKILLS
         rotateX(8deg)
         rotateY(-8deg)
         translateY(-15px);
-    border-color:#00d4ff;
-    box-shadow:
-        0 20px 50px rgba(0,212,255,.25),
-        0 0 35px rgba(124,92,255,.35);
 }
 
 .skill-card i{
     font-size:58px;
     margin-bottom:20px;
+    transition:.4s;
+}
+
+/* AWS */
+.fa-aws{
+    color:#FF9900;
+}
+
+/* Docker */
+.fa-docker{
+    color:#2496ED;
+}
+
+/* Kubernetes */
+.fa-dharmachakra{
+    color:#326CE5;
+}
+
+/* Jenkins */
+.fa-jenkins{
+    color:#D24939;
+}
+
+/* Terraform */
+.fa-server{
+    color:#7B42BC;
+}
+
+/* Ansible */
+.fa-cogs{
+    color:#EE0000;
+}
+
+/* Linux */
+.fa-linux{
+    color:#FCC624;
+}
+
+/* Git */
+.fa-git-alt{
+    color:#F05032;
+}
+
+/* GitHub */
+.fa-github{
+    color:#ffffff;
+}
+
+/* Shell */
+.fa-terminal{
+    color:#00FF88;
+}
+
+/* Python */
+.fa-python{
+    color:#FFD43B;
+}
+
+/* Prometheus */
+.fa-chart-line{
+    color:#E6522C;
+}
+
+/* Grafana */
+.fa-chart-pie{
+    color:#F46800;
+}
+
+.skill-card:hover i{
+    transform:scale(1.25) rotate(8deg);
+    filter:drop-shadow(0 0 20px currentColor);
 }
 
 .skill-card:hover i{
@@ -924,6 +991,67 @@ SKILLS
     opacity:1;
 
     max-height:100px;
+}
+/* Individual Hover Colors */
+
+.skill-card.aws:hover{
+    border-color:#FF9900;
+    box-shadow:0 0 30px rgba(255,153,0,.5);
+}
+
+.skill-card.docker:hover{
+    border-color:#2496ED;
+    box-shadow:0 0 30px rgba(36,150,237,.5);
+}
+
+.skill-card.kubernetes:hover{
+    border-color:#326CE5;
+    box-shadow:0 0 30px rgba(50,108,229,.5);
+}
+
+.skill-card.jenkins:hover{
+    border-color:#D24939;
+    box-shadow:0 0 30px rgba(210,73,57,.5);
+}
+
+.skill-card.terraform:hover{
+    border-color:#7B42BC;
+    box-shadow:0 0 30px rgba(123,66,188,.5);
+}
+
+.skill-card.ansible:hover{
+    border-color:#EE0000;
+    box-shadow:0 0 30px rgba(238,0,0,.5);
+}
+
+.skill-card.linux:hover{
+    border-color:#FCC624;
+    box-shadow:0 0 30px rgba(252,198,36,.5);
+}
+
+.skill-card.git:hover{
+    border-color:#F05032;
+    box-shadow:0 0 30px rgba(240,80,50,.5);
+}
+
+.skill-card.github:hover{
+    border-color:#ffffff;
+    box-shadow:0 0 30px rgba(255,255,255,.4);
+}
+
+.skill-card.python:hover{
+    border-color:#FFD43B;
+    box-shadow:0 0 30px rgba(255,212,59,.5);
+}
+
+.skill-card.prometheus:hover{
+    border-color:#E6522C;
+    box-shadow:0 0 30px rgba(230,82,44,.5);
+}
+
+.skill-card.grafana:hover{
+    border-color:#F46800;
+    box-shadow:0 0 30px rgba(244,104,0,.5);
 }
 
 /*=========================================
