@@ -795,29 +795,33 @@ SKILLS
 =========================================*/
 
 .skills-grid{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-
-gap:20px;
-
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px, 220px));
+    justify-content:center;
+    gap:30px;
+    margin-top:60px;
 }
 
 .skill-card{
+    width:220px;
+    height:280px;
 
-background:#10142b;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 
-padding:25px;
+    padding:20px;
 
-border-radius:18px;
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:25px;
 
-text-align:center;
+    position:relative;
+    overflow:hidden;
 
-transition:.4s;
-
-border:1px solid rgba(255,255,255,.08);
-
+    transition:.4s;
 }
 
 
