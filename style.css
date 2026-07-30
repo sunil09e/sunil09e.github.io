@@ -821,6 +821,8 @@ SKILLS
         rgba(124,92,255,.15));
     opacity:0;
     transition:.4s;
+
+    pointer-events:none;   /* Add this line */
 }
 
 .skill-card{
@@ -903,6 +905,9 @@ SKILLS
     color:#fff;
 
     text-decoration:none;
+
+    position:relative;
+    z-index:100;      /* Add these two lines */
 
     opacity:0;
 
