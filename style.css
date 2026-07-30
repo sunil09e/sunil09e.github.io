@@ -832,13 +832,19 @@ SKILLS
 
 @keyframes floating{
     0%{
-        transform: translateY(0);
+        translate: 0 0;
     }
     50%{
-        transform: translateY(-10px);
+        translate: 0 -10px;
     }
     100%{
-        transform: translateY(0);
+        translate: 0 0;
+    }
+}
+
+@keyframes loadBar{
+    from{
+        width:0;
     }
 }
 
