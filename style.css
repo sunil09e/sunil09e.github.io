@@ -801,8 +801,7 @@ SKILLS
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:25px;
     justify-items:center;
-    align-items:start;
-    margin-top:40px;
+    align-items:stretch;   /* change from start */
 }
 
 .skill-card{
