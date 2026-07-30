@@ -1072,7 +1072,7 @@ SKILL BAR
 .skill-card .progress{
     width:100%;
     height:8px;
-    background:rgba(255,255,255,.08);
+    background:rgba(255,255,255,.1);
     border-radius:20px;
     overflow:hidden;
     margin-top:15px;
@@ -1080,11 +1080,118 @@ SKILL BAR
 
 .skill-card .progress span{
     display:block;
+    width:0;              /* Hidden initially */
     height:100%;
-    width:90%;
-    background:linear-gradient(90deg,#00d4ff,#7c5cff);
     border-radius:20px;
-    animation:loadBar 2s ease;
+    transition:width .8s ease;
+}
+
+/* Show progress on hover */
+
+.skill-card:hover .progress.aws span{
+    width:90%;
+}
+
+.skill-card:hover .progress.docker span{
+    width:90%;
+}
+
+.skill-card:hover .progress.kubernetes span{
+    width:85%;
+}
+
+.skill-card:hover .progress.jenkins span{
+    width:85%;
+}
+
+.skill-card:hover .progress.terraform span{
+    width:80%;
+}
+
+.skill-card:hover .progress.ansible span{
+    width:75%;
+}
+
+.skill-card:hover .progress.linux span{
+    width:90%;
+}
+
+.skill-card:hover .progress.git span{
+    width:90%;
+}
+
+.skill-card:hover .progress.github span{
+    width:90%;
+}
+
+.skill-card:hover .progress.shell span{
+    width:80%;
+}
+
+.skill-card:hover .progress.python span{
+    width:85%;
+}
+
+.skill-card:hover .progress.prometheus span{
+    width:75%;
+}
+
+.skill-card:hover .progress.grafana span{
+    width:75%;
+}
+
+/* Individual colors */
+
+.progress.aws span{
+    background:#FF9900;
+}
+
+.progress.docker span{
+    background:#2496ED;
+}
+
+.progress.kubernetes span{
+    background:#326CE5;
+}
+
+.progress.jenkins span{
+    background:#D24939;
+}
+
+.progress.terraform span{
+    background:#7B42BC;
+}
+
+.progress.ansible span{
+    background:#EE0000;
+}
+
+.progress.linux span{
+    background:#FCC624;
+}
+
+.progress.git span{
+    background:#F05032;
+}
+
+.progress.github span{
+    background:#ffffff;
+}
+
+.progress.shell span{
+    background:#00FF88;
+}
+
+.progress.python span{
+    background:#FFD43B;
+}
+
+.progress.prometheus span{
+    background:#E6522C;
+}
+
+.progress.grafana span{
+    background:#F46800;
 }
 
 @keyframes loadBar{
