@@ -822,45 +822,8 @@ SKILLS
     justify-content: center;
     align-items: center;
 
-    transition: .4s ease;
-
-    /* Floating Animation */
-    animation: floating 4s ease-in-out infinite;
+    transition: .4s;
 }
-
-/* Floating Animation */
-
-@keyframes floating{
-    0%{
-        translate: 0 0;
-    }
-    50%{
-        translate: 0 -10px;
-    }
-    100%{
-        translate: 0 0;
-    }
-}
-
-@keyframes loadBar{
-    from{
-        width:0;
-    }
-}
-
-/* Different Floating Delays */
-
-.skill-card:nth-child(2){animation-delay:.2s;}
-.skill-card:nth-child(3){animation-delay:.4s;}
-.skill-card:nth-child(4){animation-delay:.6s;}
-.skill-card:nth-child(5){animation-delay:.8s;}
-.skill-card:nth-child(6){animation-delay:1s;}
-.skill-card:nth-child(7){animation-delay:1.2s;}
-.skill-card:nth-child(8){animation-delay:1.4s;}
-.skill-card:nth-child(9){animation-delay:1.6s;}
-.skill-card:nth-child(10){animation-delay:1.8s;}
-.skill-card:nth-child(11){animation-delay:2s;}
-.skill-card:nth-child(12){animation-delay:2.2s;}
 
 /* Glow Background */
 
@@ -900,20 +863,19 @@ SKILLS
     opacity: .25;
 }
 
-/* Keep Content Above Glow */
+/* Keep content above glow */
 
 .skill-card > *{
     position: relative;
     z-index: 1;
 }
 
-/* Hover Effect */
+/* Hover */
 
 .skill-card:hover{
-    animation-play-state: paused;
-    transform: translateY(-18px) scale(1.05);
+    transform: translateY(-10px);
     border-color: #00d4ff;
-    box-shadow: 0 20px 40px rgba(0,212,255,.35);
+    box-shadow: 0 20px 40px rgba(0,212,255,.25);
 }
 
 /* Icons */
@@ -954,6 +916,7 @@ SKILLS
 
 .learn-btn{
     display: inline-block;
+
     margin-top: 15px;
     padding: 10px 20px;
 
@@ -978,6 +941,90 @@ SKILLS
 .learn-btn:hover{
     background: #009dff;
 }
+
+/* Brand Colors */
+
+.fa-aws{color:#FF9900;}
+.fa-docker{color:#2496ED;}
+.fa-dharmachakra{color:#326CE5;}
+.fa-jenkins{color:#D24939;}
+.fa-server{color:#7B42BC;}
+.fa-cogs{color:#EE0000;}
+.fa-linux{color:#FCC624;}
+.fa-git-alt{color:#F05032;}
+.fa-github{color:#fff;}
+.fa-terminal{color:#00FF88;}
+.fa-python{color:#FFD43B;}
+.fa-chart-line{color:#E6522C;}
+.fa-chart-pie{color:#F46800;}
+
+/* Individual Hover Glow */
+
+.skill-card.aws:hover{
+    border-color:#FF9900;
+    box-shadow:0 0 25px rgba(255,153,0,.45);
+}
+
+.skill-card.docker:hover{
+    border-color:#2496ED;
+    box-shadow:0 0 25px rgba(36,150,237,.45);
+}
+
+.skill-card.kubernetes:hover{
+    border-color:#326CE5;
+    box-shadow:0 0 25px rgba(50,108,229,.45);
+}
+
+.skill-card.jenkins:hover{
+    border-color:#D24939;
+    box-shadow:0 0 25px rgba(210,73,57,.45);
+}
+
+.skill-card.terraform:hover{
+    border-color:#7B42BC;
+    box-shadow:0 0 25px rgba(123,66,188,.45);
+}
+
+.skill-card.ansible:hover{
+    border-color:#EE0000;
+    box-shadow:0 0 25px rgba(238,0,0,.45);
+}
+
+.skill-card.linux:hover{
+    border-color:#FCC624;
+    box-shadow:0 0 25px rgba(252,198,36,.45);
+}
+
+.skill-card.git:hover{
+    border-color:#F05032;
+    box-shadow:0 0 25px rgba(240,80,50,.45);
+}
+
+.skill-card.github:hover{
+    border-color:#ffffff;
+    box-shadow:0 0 25px rgba(255,255,255,.30);
+}
+
+.skill-card.shell:hover{
+    border-color:#00FF88;
+    box-shadow:0 0 25px rgba(0,255,136,.35);
+}
+
+.skill-card.python:hover{
+    border-color:#FFD43B;
+    box-shadow:0 0 25px rgba(255,212,59,.45);
+}
+
+.skill-card.prometheus:hover{
+    border-color:#E6522C;
+    box-shadow:0 0 25px rgba(230,82,44,.45);
+}
+
+.skill-card.grafana:hover{
+    border-color:#F46800;
+    box-shadow:0 0 25px rgba(244,104,0,.45);
+}
+
 /*=========================================
 SKILL BAR
 =========================================*/
