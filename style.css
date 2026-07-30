@@ -795,10 +795,17 @@ SKILLS
 =========================================*/
 
 .skills-grid{
+
     display:flex;
+
     flex-wrap:wrap;
+
     justify-content:center;
+
+    align-items:flex-start;
+
     gap:25px;
+
 }
 
 .skill-card{
