@@ -796,32 +796,33 @@ SKILLS
 
 .skills-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(220px, 220px));
+    grid-template-columns:repeat(auto-fit, minmax(180px, 180px));
     justify-content:center;
-    gap:30px;
-    margin-top:60px;
+    gap:20px;
+    margin-top:40px;
 }
 
 .skill-card{
-    width:220px;
-    height:280px;
+
+    width:180px;
+    height:220px;
+
+    padding:20px 15px;
 
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
 
-    padding:20px;
-
     background:rgba(255,255,255,.05);
     backdrop-filter:blur(20px);
+
     border:1px solid rgba(255,255,255,.08);
-    border-radius:25px;
+    border-radius:20px;
 
-    position:relative;
+    transition:.35s;
+
     overflow:hidden;
-
-    transition:.4s;
 }
 
 
@@ -869,9 +870,8 @@ SKILLS
 }
 
 .skill-card i{
-    font-size:58px;
-    margin-bottom:20px;
-    transition:.4s;
+    font-size:48px;
+    margin-bottom:15px;
 }
 
 /* AWS */
@@ -949,49 +949,22 @@ SKILLS
 }
 
 .skill-card h3{
-    font-size:24px;
-    margin-bottom:10px;
-    color:#fff;
+    font-size:18px;
+    margin:10px 0;
 }
 .skill-card p{
-
-    color:#d8d8d8;
-    font-size:15px;
-    line-height:1.5;
-
-    opacity:0;
-    max-height:0;
-    overflow:hidden;
-
-    transition:.4s;
+    font-size:13px;
 }
 
 .learn-btn{
 
-    display:inline-block;
+    padding:8px 18px;
 
-    margin-top:15px;
+    font-size:14px;
 
-    padding:10px 20px;
+    border-radius:25px;
 
-    border-radius:30px;
-
-    background:#00d4ff;
-
-    color:#fff;
-
-    text-decoration:none;
-
-    position:relative;
-    z-index:100;      /* Add these two lines */
-
-    opacity:0;
-
-    max-height:0;
-
-    overflow:hidden;
-
-    transition:.4s;
+    margin-top:10px;
 }
 
 .skill-card:hover p,
