@@ -795,21 +795,14 @@ SKILLS
 =========================================*/
 
 .skills-grid{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
+    display:grid;
+    grid-template-columns:repeat(5, 220px);
     justify-content:center;
-
-    align-items:flex-start;
-
     gap:25px;
-
+    margin-top:50px;
 }
 
 .skill-card{
-
     width:220px;
     height:280px;
 
@@ -820,18 +813,15 @@ SKILLS
 
     background:rgba(255,255,255,.05);
     backdrop-filter:blur(20px);
-
     border:1px solid rgba(255,255,255,.08);
-
     border-radius:25px;
 
-    position:relative;
+    padding:20px;
 
+    position:relative;
     overflow:hidden;
 
     transition:.4s;
-
-    flex-shrink:0;      /* Important */
 }
 
 .skill-card::before{
@@ -874,7 +864,7 @@ SKILLS
 }
 
 .skill-card:hover{
-    transform:translateY(-10px) scale(1.03);
+    transform:translateY(-10px);
 }
 
 .skill-card i{
@@ -1107,25 +1097,7 @@ SKILL BAR
 FLOATING ANIMATION
 =========================================*/
 
-.skill-card:nth-child(even){
-    animation:floatSkill 6s ease-in-out infinite;
-}
 
-.skill-card:nth-child(odd){
-    animation:floatSkill2 7s ease-in-out infinite;
-}
-
-@keyframes floatSkill{
-    50%{
-        transform:translateY(-10px);
-    }
-}
-
-@keyframes floatSkill2{
-    50%{
-        transform:translateY(10px);
-    }
-}
 /*==================================================
  EXPERIENCE SECTION
 ==================================================*/
