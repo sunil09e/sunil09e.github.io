@@ -823,10 +823,34 @@ SKILLS
 
 /* Glow Background */
 
-.skill-card::before,
-.skill-card::after{
-    pointer-events: none;
+.skill-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(135deg,
+        rgba(0,212,255,.15),
+        rgba(124,92,255,.15));
+    opacity:0;
+    transition:.4s;
+
+    pointer-events:none;
 }
+
+.skill-card::after{
+    content:"";
+    position:absolute;
+    width:180px;
+    height:180px;
+    background:#00d4ff;
+    filter:blur(120px);
+    opacity:0;
+    top:-80px;
+    left:-80px;
+    transition:.5s;
+
+    pointer-events:none;
+}
+
 .skill-card:hover::before{
 
     opacity:1;
