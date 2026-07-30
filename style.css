@@ -796,20 +796,27 @@ SKILLS
 
 .skills-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:30px;
+    justify-items:center;
 }
 
 .skill-card{
+    width:100%;
+    max-width:250px;
+    height:280px;
+
     background:rgba(255,255,255,.05);
     border:1px solid rgba(255,255,255,.08);
-    backdrop-filter:blur(20px);
     border-radius:25px;
-    padding:40px 25px;
-    text-align:center;
-    transition:.45s;
-    position:relative;
-    overflow:hidden;
+    backdrop-filter:blur(20px);
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    transition:.4s;
 }
 
 .skill-card::before{
