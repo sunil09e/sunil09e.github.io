@@ -613,14 +613,14 @@ text-shadow:0 0 20px currentColor;
 
 }
 
-.aws{top:0;color:#ff9900;}
-.docker{right:20px;top:90px;color:#2496ed;}
-.kubernetes{right:0;bottom:120px;color:#326ce5;}
-.git{bottom:10px;color:#f34f29;}
-.github{left:0;bottom:90px;}
-.terraform{left:10px;top:80px;color:#7b42bc;}
-.linux{top:50%;left:-20px;color:#fbc02d;}
-.monitor{top:50%;right:-20px;color:#00d4ff;}
+.icons .aws{top:0;color:#ff9900;}
+.icons .docker{right:20px;top:90px;color:#2496ed;}
+.icons .kubernetes{right:0;bottom:120px;color:#326ce5;}
+.icons .git{bottom:10px;color:#f34f29;}
+.icons .github{left:0;bottom:90px;}
+.icons .terraform{left:10px;top:80px;color:#7b42bc;}
+.icons .linux{top:50%;left:-20px;color:#fbc02d;}
+.icons .monitor{top:50%;right:-20px;color:#00d4ff;}
 
 @keyframes floatIcon{
 
