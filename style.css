@@ -808,7 +808,8 @@ SKILLS
     overflow: hidden;
 
     width: 220px;
-    height: 280px;
+    min-height: 280px;
+    height: auto;
 
     background: rgba(255,255,255,.05);
     border: 1px solid rgba(255,255,255,.08);
@@ -819,12 +820,16 @@ SKILLS
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: flex-start;
 
-    transition: .4s;
+    transition: all .4s ease;
 }
 
+.skill-card:hover{
+    transform: translateY(-10px);
+    min-height: 420px;
+}
 /* Glow Background */
 
 .skill-card::before{
@@ -901,45 +906,49 @@ SKILLS
 /* Description */
 
 .skill-card p{
-    color: #d8d8d8;
-    font-size: 15px;
-    line-height: 1.5;
+    color:#d8d8d8;
+    font-size:15px;
+    line-height:1.6;
+    margin-top:10px;
 
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
+    opacity:0;
+    max-height:0;
+    overflow:hidden;
 
-    transition: .4s;
+    transition:all .4s ease;
+}
+
+.skill-card:hover p{
+    opacity:1;
+    max-height:120px;
 }
 
 /* Learn Button */
 
 .learn-btn{
-    display: inline-block;
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 20px;
+    border-radius:30px;
+    background:#00d4ff;
+    color:#fff;
+    text-decoration:none;
 
-    margin-top: 15px;
-    padding: 10px 20px;
+    opacity:0;
+    transform:translateY(15px);
+    pointer-events:none;
 
-    border-radius: 30px;
-    background: #00d4ff;
-    color: #fff;
-    text-decoration: none;
-
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-
-    transition: .4s;
+    transition:all .4s ease;
 }
-
 .skill-card:hover p,
 .skill-card:hover .learn-btn{
-    opacity: 1;
-    max-height: 100px;
+    opacity:1;
+    transform:translateY(0);
+    pointer-events:auto;
 }
 
 .learn-btn:hover{
-    background: #009dff;
+    background:#009dff;
 }
 
 /* Brand Colors */
