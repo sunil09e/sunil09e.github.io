@@ -794,158 +794,151 @@ SKILLS
 =========================================*/
 
 .skills-grid{
-    display:grid;
-    grid-template-columns:repeat(4,220px);
-    justify-content:center;
-    gap:30px;
-    margin-top:50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    justify-items: center;
+    align-items: start;
+    margin-top: 40px;
 }
 
 .skill-card{
-    position:relative;
-    overflow:hidden;
+    position: relative;
+    overflow: hidden;
 
-    width:220px;
-    height:280px;
+    width: 220px;
+    height: 280px;
 
-    background:rgba(255,255,255,.05);
-    border:1px solid rgba(255,255,255,.08);
-    backdrop-filter:blur(20px);
-    border-radius:25px;
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.08);
+    backdrop-filter: blur(20px);
+    border-radius: 25px;
+    padding: 30px 20px;
+    text-align: center;
 
-    padding:30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-
-    text-align:center;
-    transition:all .4s ease;
+    transition: .4s;
 }
 
 /* Glow Background */
 
 .skill-card::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
         135deg,
         rgba(0,212,255,.15),
         rgba(124,92,255,.15)
     );
-    opacity:0;
-    transition:.4s;
-    z-index:0;
+    opacity: 0;
+    transition: .4s;
+    z-index: 0;
 }
 
 .skill-card::after{
-    content:"";
-    position:absolute;
-    width:180px;
-    height:180px;
-    background:#00d4ff;
-    filter:blur(120px);
-    top:-80px;
-    left:-80px;
-    opacity:0;
-    transition:.5s;
-    z-index:0;
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: #00d4ff;
+    filter: blur(120px);
+    opacity: 0;
+    top: -80px;
+    left: -80px;
+    transition: .5s;
+    z-index: 0;
 }
 
 .skill-card:hover::before{
-    opacity:1;
+    opacity: 1;
 }
 
 .skill-card:hover::after{
-    opacity:.25;
+    opacity: .25;
 }
 
-/* Content above glow */
+/* Keep content above glow */
 
-.skill-card>*{
-    position:relative;
-    z-index:1;
+.skill-card > *{
+    position: relative;
+    z-index: 1;
 }
 
 /* Hover */
 
 .skill-card:hover{
-    transform:translateY(-10px);
-    border-color:#00d4ff;
-    box-shadow:0 20px 40px rgba(0,212,255,.25);
+    transform: translateY(-10px);
+    border-color: #00d4ff;
+    box-shadow: 0 20px 40px rgba(0,212,255,.25);
 }
 
-/* Icon */
+/* Icons */
 
 .skill-card i{
-    font-size:58px;
-    margin-bottom:20px;
-    transition:.4s;
+    font-size: 58px;
+    margin-bottom: 20px;
+    transition: .4s;
 }
 
 .skill-card:hover i{
-    transform:scale(1.15) rotate(5deg);
+    transform: scale(1.25) rotate(8deg);
 }
 
 /* Heading */
 
 .skill-card h3{
-    font-size:24px;
-    color:#fff;
-    margin-bottom:10px;
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #fff;
 }
 
 /* Description */
 
 .skill-card p{
-    color:#d8d8d8;
-    font-size:15px;
-    line-height:1.5;
-    margin-bottom:15px;
+    color: #d8d8d8;
+    font-size: 15px;
+    line-height: 1.5;
+
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+
+    transition: .4s;
 }
 
-/* Button */
+/* Learn Button */
 
 .learn-btn{
-    display:inline-block;
-    padding:10px 20px;
-    border-radius:30px;
-    background:#00d4ff;
-    color:#fff;
-    text-decoration:none;
-    transition:.3s;
+    display: inline-block;
+
+    margin-top: 15px;
+    padding: 10px 20px;
+
+    border-radius: 30px;
+    background: #00d4ff;
+    color: #fff;
+    text-decoration: none;
+
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+
+    transition: .4s;
+}
+
+.skill-card:hover p,
+.skill-card:hover .learn-btn{
+    opacity: 1;
+    max-height: 100px;
 }
 
 .learn-btn:hover{
-    background:#009dff;
-}
-
-/* Progress Bar */
-
-.skill-card .progress{
-    width:100%;
-    height:8px;
-    background:rgba(255,255,255,.08);
-    border-radius:20px;
-    overflow:hidden;
-    margin-top:15px;
-}
-
-.skill-card .progress span{
-    display:block;
-    height:100%;
-    width:90%;
-    background:linear-gradient(90deg,#00d4ff,#7c5cff);
-    border-radius:20px;
-    animation:loadBar 2s ease;
-}
-
-@keyframes loadBar{
-    from{
-        width:0;
-    }
+    background: #009dff;
 }
 
 /* Brand Colors */
@@ -958,13 +951,13 @@ SKILLS
 .fa-cogs{color:#EE0000;}
 .fa-linux{color:#FCC624;}
 .fa-git-alt{color:#F05032;}
-.fa-github{color:#ffffff;}
+.fa-github{color:#fff;}
 .fa-terminal{color:#00FF88;}
 .fa-python{color:#FFD43B;}
 .fa-chart-line{color:#E6522C;}
 .fa-chart-pie{color:#F46800;}
 
-/* Individual Hover Colors */
+/* Individual Hover Glow */
 
 .skill-card.aws:hover{
     border-color:#FF9900;
@@ -1008,7 +1001,7 @@ SKILLS
 
 .skill-card.github:hover{
     border-color:#ffffff;
-    box-shadow:0 0 25px rgba(255,255,255,.35);
+    box-shadow:0 0 25px rgba(255,255,255,.30);
 }
 
 .skill-card.shell:hover{
@@ -1031,23 +1024,31 @@ SKILLS
     box-shadow:0 0 25px rgba(244,104,0,.45);
 }
 
-/* Responsive */
+/*=========================================
+SKILL BAR
+=========================================*/
 
-@media (max-width:1100px){
-    .skills-grid{
-        grid-template-columns:repeat(3,220px);
-    }
+.skill-card .progress{
+    width:100%;
+    height:8px;
+    background:rgba(255,255,255,.08);
+    border-radius:20px;
+    overflow:hidden;
+    margin-top:15px;
 }
 
-@media (max-width:768px){
-    .skills-grid{
-        grid-template-columns:repeat(2,220px);
-    }
+.skill-card .progress span{
+    display:block;
+    height:100%;
+    width:90%;
+    background:linear-gradient(90deg,#00d4ff,#7c5cff);
+    border-radius:20px;
+    animation:loadBar 2s ease;
 }
 
-@media (max-width:500px){
-    .skills-grid{
-        grid-template-columns:repeat(1,220px);
+@keyframes loadBar{
+    from{
+        width:0;
     }
 }
 /*==================================================
