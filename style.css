@@ -823,19 +823,24 @@ SKILLS
     transition:.4s;
 }
 
-.skill-card::after{
-    content:"";
-    position:absolute;
-    width:180px;
-    height:180px;
-    background:#00d4ff;
-    filter:blur(120px);
-    opacity:0;
-    top:-80px;
-    left:-80px;
-    transition:.5s;
-}
+.skill-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(20px);
+    border-radius:25px;
+    width:220px;
+    height:280px;      /* All cards same size */
+    padding:30px 20px;
+    text-align:center;
+    transition:.45s;
+    position:relative;
+    overflow:hidden;
 
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
 .skill-card:hover::before{
     opacity:1;
 }
@@ -858,8 +863,7 @@ SKILLS
 
 .skill-card i{
     font-size:58px;
-    margin-bottom:25px;
-    transition:.4s;
+    margin-bottom:20px;
 }
 
 .skill-card:hover i{
@@ -867,9 +871,54 @@ SKILLS
 }
 
 .skill-card h3{
-    font-size:22px;
-    margin-bottom:20px;
+    font-size:24px;
+    margin-bottom:10px;
     color:#fff;
+}
+.skill-card p{
+
+    color:#d8d8d8;
+    font-size:15px;
+    line-height:1.5;
+
+    opacity:0;
+    max-height:0;
+    overflow:hidden;
+
+    transition:.4s;
+}
+
+.learn-btn{
+
+    display:inline-block;
+
+    margin-top:15px;
+
+    padding:10px 20px;
+
+    border-radius:30px;
+
+    background:#00d4ff;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    opacity:0;
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:.4s;
+}
+
+.skill-card:hover p,
+.skill-card:hover .learn-btn{
+
+    opacity:1;
+
+    max-height:100px;
 }
 
 /*=========================================
