@@ -931,11 +931,14 @@ SKILLS
 
 /* Show on Hover */
 
-.skill-card:hover p,
-.skill-card:hover .learn-btn{
-
+.skill-card:hover p{
     opacity:1;
+    max-height:100px;
+}
 
+.skill-card:hover .learn-btn,
+.learn-btn:hover{
+    opacity:1;
     max-height:100px;
 }
 
