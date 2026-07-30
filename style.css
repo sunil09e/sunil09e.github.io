@@ -1044,16 +1044,24 @@ SKILL BAR
     background:rgba(255,255,255,.08);
     border-radius:20px;
     overflow:hidden;
-    margin-top:15px;
+    margin-top:20px;
 }
 
 .skill-card .progress span{
     display:block;
     height:100%;
     width:90%;
-    background:linear-gradient(90deg,#00d4ff,#7c5cff);
     border-radius:20px;
-    animation:loadBar 2s ease;
+    background:linear-gradient(90deg,#00d4ff,#7c5cff);
+
+    transform-origin:left;
+    transform:scaleX(0);
+
+    transition:transform 1.5s ease;
+}
+
+.skill-card:hover .progress span{
+    transform:scaleX(1);
 }
 
 @keyframes loadBar{
