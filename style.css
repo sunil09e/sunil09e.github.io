@@ -804,8 +804,12 @@ SKILLS
 }
 
 .skill-card{
+    position: relative;
+    overflow: hidden;
+
     width: 220px;
     height: 280px;
+
     background: rgba(255,255,255,.05);
     border: 1px solid rgba(255,255,255,.08);
     backdrop-filter: blur(20px);
@@ -824,40 +828,46 @@ SKILLS
 /* Glow Background */
 
 .skill-card::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(135deg,
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
         rgba(0,212,255,.15),
-        rgba(124,92,255,.15));
-    opacity:0;
-    transition:.4s;
-
-    pointer-events:none;
+        rgba(124,92,255,.15)
+    );
+    opacity: 0;
+    transition: .4s;
+    z-index: 0;
 }
 
 .skill-card::after{
-    content:"";
-    position:absolute;
-    width:180px;
-    height:180px;
-    background:#00d4ff;
-    filter:blur(120px);
-    opacity:0;
-    top:-80px;
-    left:-80px;
-    transition:.5s;
-
-    pointer-events:none;
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: #00d4ff;
+    filter: blur(120px);
+    opacity: 0;
+    top: -80px;
+    left: -80px;
+    transition: .5s;
+    z-index: 0;
 }
 
 .skill-card:hover::before{
-
-    opacity:1;
-
+    opacity: 1;
 }
+
 .skill-card:hover::after{
-    opacity:.25;
+    opacity: .25;
+}
+
+/* Keep content above glow */
+
+.skill-card > *{
+    position: relative;
+    z-index: 1;
 }
 
 /* Hover */
@@ -871,66 +881,65 @@ SKILLS
 /* Icons */
 
 .skill-card i{
-    font-size:58px;
-    margin-bottom:20px;
+    font-size: 58px;
+    margin-bottom: 20px;
+    transition: .4s;
 }
 
 .skill-card:hover i{
-    transform:scale(1.25) rotate(8deg);
+    transform: scale(1.25) rotate(8deg);
 }
 
 /* Heading */
 
 .skill-card h3{
-    font-size:24px;
-    margin-bottom:10px;
-    color:#fff;
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #fff;
 }
-
 
 /* Description */
 
 .skill-card p{
-    color:#d8d8d8;
-    font-size:15px;
-    line-height:1.5;
+    color: #d8d8d8;
+    font-size: 15px;
+    line-height: 1.5;
 
-    height:45px;
-    opacity:0;
-    transform:translateY(15px);
-    transition:.4s;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+
+    transition: .4s;
 }
 
 /* Learn Button */
 
 .learn-btn{
-    display:inline-block;
-    margin-top:15px;
-    padding:10px 20px;
-    border-radius:30px;
-    background:#00d4ff;
-    color:#fff;
-    text-decoration:none;
+    display: inline-block;
 
-    opacity:0;
-    transform:translateY(15px);
-    transition:.4s;
+    margin-top: 15px;
+    padding: 10px 20px;
+
+    border-radius: 30px;
+    background: #00d4ff;
+    color: #fff;
+    text-decoration: none;
+
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+
+    transition: .4s;
 }
-
-/* Show on Hover */
 
 .skill-card:hover p,
 .skill-card:hover .learn-btn{
-    opacity:1;
-    transform:translateY(0);
+    opacity: 1;
+    max-height: 100px;
 }
 
-/* Button Hover */
-
 .learn-btn:hover{
-
-    background:#009dff;
-
+    background: #009dff;
 }
 
 /* Brand Colors */
@@ -1020,17 +1029,13 @@ SKILLS
 SKILL BAR
 =========================================*/
 
-
-.skill-card::marker{
-    display:none;
-}
-
 .skill-card .progress{
     width:100%;
     height:8px;
     background:rgba(255,255,255,.08);
     border-radius:20px;
     overflow:hidden;
+    margin-top:15px;
 }
 
 .skill-card .progress span{
