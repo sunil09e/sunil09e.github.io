@@ -804,21 +804,21 @@ SKILLS
 }
 
 .skill-card{
-    position: relative;
-    overflow: hidden;
-
     width: 220px;
     height: 280px;
-
     background: rgba(255,255,255,.05);
     border: 1px solid rgba(255,255,255,.08);
-    border-radius: 25px;
     backdrop-filter: blur(20px);
+    border-radius: 25px;
+    padding: 30px 20px;
+    text-align: center;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    transition: .4s;
 }
 
 /* Glow Background */
