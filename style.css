@@ -816,7 +816,6 @@ SKILLS
     border: 1px solid rgba(255,255,255,.08);
     backdrop-filter: blur(20px);
     border-radius: 25px;
-
     padding: 30px 20px;
     text-align: center;
 
@@ -825,7 +824,7 @@ SKILLS
     justify-content: center;
     align-items: center;
 
-    transition: all .4s ease;
+    transition: .4s;
 }
 
 /* Glow Background */
@@ -877,6 +876,8 @@ SKILLS
 
 .skill-card:hover{
     transform: translateY(-10px);
+    border-color: #00d4ff;
+    box-shadow: 0 20px 40px rgba(0,212,255,.25);
 }
 
 /* Icons */
@@ -1046,6 +1047,12 @@ SKILL BAR
     background:linear-gradient(90deg,#00d4ff,#7c5cff);
     border-radius:20px;
     animation:loadBar 2s ease;
+}
+
+@keyframes loadBar{
+    from{
+        width:0;
+    }
 }
 
 @keyframes loadBar{
