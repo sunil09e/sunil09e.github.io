@@ -805,13 +805,19 @@ SKILLS
     border:1px solid rgba(255,255,255,.08);
     backdrop-filter:blur(20px);
     border-radius:25px;
-    padding:40px 25px;
+    width:220px;
+    height:280px;      /* All cards same size */
+    padding:30px 20px;
     text-align:center;
     transition:.45s;
     position:relative;
     overflow:hidden;
-}
 
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
 /* Glow Background */
 
 .skill-card::before{
