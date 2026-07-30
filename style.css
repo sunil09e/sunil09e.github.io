@@ -796,34 +796,33 @@ SKILLS
 
 .skills-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,220px));
+    grid-template-columns:repeat(auto-fit, minmax(220px,220px));
     justify-content:center;
+    align-items:start;
     gap:25px;
     margin-top:50px;
 }
 
 .skill-card{
-
     width:220px;
     height:260px;
 
     background:rgba(255,255,255,.05);
-    backdrop-filter:blur(20px);
-
     border:1px solid rgba(255,255,255,.08);
     border-radius:25px;
+    backdrop-filter:blur(20px);
 
     display:flex;
     flex-direction:column;
-    justify-content:center;
     align-items:center;
+    justify-content:flex-start;
+
+    padding:30px 20px;
 
     position:relative;
     overflow:hidden;
 
-    padding:25px;
-
-    transition:.35s ease;
+    transition:.35s;
 }
 
 /* Glow Background */
@@ -896,33 +895,36 @@ SKILLS
 /* Description Hidden */
 
 .skill-card p{
+    position:absolute;
+    bottom:60px;
+
+    left:20px;
+    right:20px;
 
     color:#d8d8d8;
-
     font-size:15px;
-
     text-align:center;
 
-    margin-bottom:15px;
-
     opacity:0;
-
     visibility:hidden;
-
     transform:translateY(20px);
 
     transition:.35s;
-
 }
 
 /* Learn Button Hidden */
 
 .learn-btn{
 
+    position:absolute;
+
+    bottom:20px;
+
+    left:50%;
+    transform:translateX(-50%) translateY(20px);
+
     background:#00d4ff;
-
     color:#fff;
-
     text-decoration:none;
 
     padding:10px 22px;
@@ -932,26 +934,23 @@ SKILLS
     font-size:14px;
 
     opacity:0;
-
     visibility:hidden;
 
-    transform:translateY(20px);
-
     transition:.35s;
-
 }
 
 /* Show on Hover */
 
-.skill-card:hover p,
-.skill-card:hover .learn-btn{
-
+.skill-card:hover p{
     opacity:1;
-
     visibility:visible;
-
     transform:translateY(0);
+}
 
+.skill-card:hover .learn-btn{
+    opacity:1;
+    visibility:visible;
+    transform:translateX(-50%) translateY(0);
 }
 
 /* Button Hover */
