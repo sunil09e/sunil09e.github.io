@@ -513,6 +513,15 @@ box-shadow:0 0 30px #00d4ff;
 
 }
 
+/* Naukri Icon */
+.naukri-icon img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+
 /*==================================================
  HERO RIGHT
 ==================================================*/
